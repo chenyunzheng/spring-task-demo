@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: spring-task-name
+
+#任务执行线程池默认配置 - I/O型任务
+task-exec-pool-default:
+  core-size: 20
+  queue-capacity: 300
+  max-size: 200
+  keep-alive: 60
+  thread-name-prefix: exec-pool-
+
+#任务执行线程池配置 - 计算型任务
+task-exec-pool-cpu:
+  core-size: 4
+  queue-capacity: 200
+  max-size: 8
+  keep-alive: 60
+  thread-name-prefix: exec-pool-cpu-
+
+#任务调度线程池默认配置
+task-schedule-pool-default:
+  #计算型任务 - cpu核数; I/O型任务 - 20
+  size: 8
+  thread-name-prefix: schedule-
